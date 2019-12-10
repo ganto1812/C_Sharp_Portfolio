@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="1">
+    <!-- navigation bar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-0"
+         id="navbar">
+        <span class="navbar-brand px-3">Menu</span>
+        <button class="navbar-toggler mx-1"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <!-- Phone menu -->
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href='@Url.Action("Index", "Home")#home' class="nav-link px-3">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href='@Url.Action("Index", "Home")#about' class="nav-link px-3">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href='@Url.Action("Index", "Home")#projects' class="nav-link px-3">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href='@Url.Action("Index", "Home")#contact' class="nav-link px-3">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="body-content mt-5">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/custom")
+    @RenderSection("scripts", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    @Scripts.Render("~/bundles/cookies")
+
+</body>
+</html >

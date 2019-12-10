@@ -1,0 +1,177 @@
+﻿<style>
+    .app {
+        display: block;
+        font-family: "Franklin Gothic Medium";
+        font-size: 4rem;
+        align-content: center;
+        justify-content: center;
+        background: black;
+        /*background-image: url("https://images.unsplash.com/photo-1524230659092-07f99a75c013?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80");*/
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+    }
+
+    #r {
+        position: absolute;
+        top: 10%;
+        left: 20vw;
+    }
+
+    #d {
+        position: absolute;
+        top: 25%;
+        left: 15vw;
+    }
+
+    #v {
+        position: absolute;
+        top: 60%;
+        left: 20vw;
+    }
+
+    #y {
+        position: absolute;
+        left: 46%;
+        top: 10%;
+    }
+
+    #h {
+        position: absolute;
+        left: 46%;
+        top: 30%;
+    }
+
+    #n {
+        position: absolute;
+        left: 46%;
+        top: 50%;
+    }
+
+    #space {
+        position: absolute;
+        left: 44%;
+        top: 70%;
+        width: 200px;
+    }
+
+    #i {
+        position: absolute;
+        top: 10%;
+        right: 20vw;
+    }
+
+    #m {
+        position: absolute;
+        right: 20vw;
+        top: 60%;
+    }
+
+    .key {
+        display: block;
+        border: 5px solid gray;
+        border-radius: 5px;
+        padding: 1rem;
+        transition: all 0.07s;
+        width: 100px;
+        text-align: center;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        text-shadow: 0 0 5px black;
+    }
+
+    .playing {
+        animation-name: pop;
+        animation-duration: 1s;
+        -webkit-animation-name: pop;
+        -webkit-animation-duration: 1s;
+    }
+
+    @@keyframes pop {
+        0%,
+        100% {
+        }
+
+        50% {
+            transform: scale(1.2);
+            border-color: white;
+            box-shadow: 0 0 30px white;
+        }
+    }
+
+    span {
+        font-size: 1rem;
+        display: block;
+    }
+
+    @@media screen and (max-width: 1110px) {
+        body {
+            font-size: 1.5rem;
+        }
+
+        .key {
+            width: 40px;
+            padding: 2px;
+        }
+
+        span {
+            font-size: 0.6rem;
+        }
+
+        #space {
+            left: 30%;
+            width: 120px;
+        }
+    }
+</style>
+
+<div class="keys app">
+    <div data-key="32" id="space" class="key">
+        <kbd>Space</kbd>
+        <span class="sound">Clap</span>
+    </div>
+    <div data-key="68" id="d" class="key">
+        <kbd>D</kbd>
+        <span class="sound">Hihat</span>
+    </div>
+    <div data-key="78" id="n" class="key">
+        <kbd>N</kbd>
+        <span class="sound">Kick</span>
+    </div>
+    <div data-key="82" id="r" class="key">
+        <kbd>R</kbd>
+        <span class="sound">Openhat</span>
+    </div>
+    <div data-key="77" id="m" class="key">
+        <kbd>M</kbd>
+        <span class="sound">Boom</span>
+    </div>
+    <div data-key="73" id="i" class="key">
+        <kbd>I</kbd>
+        <span class="sound">Ride</span>
+    </div>
+    <div data-key="72" id="h" class="key">
+        <kbd>H</kbd>
+        <span class="sound">Snare</span>
+    </div>
+    <div data-key="89" id="y" class="key">
+        <kbd>Y</kbd>
+        <span class="sound">Tom</span>
+    </div>
+    <div data-key="86" id="v" class="key">
+        <kbd>V</kbd>
+        <span class="sound">Tink</span>
+    </div>
+    <audio data-key="32" src="sounds/clap.wav"></audio>
+    <audio data-key="68" src="sounds/hihat.wav"></audio>
+    <audio data-key="78" src="sounds/kick.wav"></audio>
+    <audio data-key="82" src="sounds/openhat.wav"></audio>
+    <audio data-key="77" src="sounds/boom.wav"></audio>
+    <audio data-key="73" src="sounds/ride.wav"></audio>
+    <audio data-key="72" src="sounds/snare.wav"></audio>
+    <audio data-key="89" src="sounds/tom.wav"></audio>
+    <audio data-key="86" src="sounds/tink.wav"></audio>
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/Projects/Drums.js"></script>
+}

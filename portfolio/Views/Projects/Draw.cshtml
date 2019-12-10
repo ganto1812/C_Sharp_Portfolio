@@ -1,0 +1,26 @@
+﻿
+<style>
+    canvas {
+        overflow: hidden;
+        margin: 0;
+        border: solid black 5px;
+    }
+
+    .draw {
+        border: 1px solid black;
+    }
+
+    @@media only screen and (max-width: 600px) {
+        canvas {
+            width: 400px;
+            height: 800px;
+        }
+    }
+</style>
+
+<h1> Draw with your mouse!</h1>
+<canvas id="draw" width="800" height="800"></canvas>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/Projects/Draw.js"></script>
+}

@@ -1,0 +1,213 @@
+﻿<style>
+    .app {
+        background: #0c6c8a;
+        text-align: center;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 100;
+    }
+
+    h1 {
+        display: block;
+        font-size: 4rem;
+    }
+
+    .controls {
+        margin: 5px 20px;
+        display: inline-block;
+        font-size: 2rem;
+    }
+
+    @@media screen and (max-width: 500px) {
+        h1 {
+            font-size: 2rem;
+        }
+
+        .controls {
+            display: block;
+            margin: 0;
+            font-size: 1rem;
+        }
+    }
+
+    :root {
+        --color: #ffc600;
+        --border: 10px;
+        --blur: 0px;
+        --saturate: 1;
+        --sepia: 0%;
+        --grayscale: 0%;
+        --thumbColor: #0d89af;
+        --trackColor: #084e63;
+    }
+
+    img {
+        padding: var(--border);
+        background: var(--color);
+        filter: grayscale(var(--grayscale)) saturate(var(--saturate)) sepia(var(--sepia)) blur(var(--blur));
+        width: 60%;
+        display: block;
+        margin: 30px auto;
+    }
+
+    span {
+        color: var(--color);
+    }
+
+    /* Slider look */
+    input {
+        margin: 0;
+        padding: 0;
+        background-color: #0c6c8a;
+    }
+
+        input[type="range"] {
+            height: 20px;
+            -webkit-appearance: none;
+            margin: 10px 0;
+        }
+
+            input[type="range"]:focus {
+                outline: none;
+            }
+
+            input[type="range"]::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 5px;
+                cursor: pointer;
+                animate: 0.2s;
+                background: var(--trackColor);
+                border-radius: 1px;
+            }
+
+            input[type="range"]::-webkit-slider-thumb {
+                height: 20px;
+                width: 20px;
+                border-radius: 15px;
+                background: var(--thumbColor);
+                cursor: pointer;
+                -webkit-appearance: none;
+                margin-top: -7.5px;
+            }
+
+            input[type="range"]:focus::-webkit-slider-runnable-track {
+                background: var(--trackColor);
+            }
+
+            input[type="range"]::-moz-range-track {
+                width: 100%;
+                height: 5px;
+                cursor: pointer;
+                animate: 0.2s;
+                background: var(--trackColor);
+                border-radius: 1px;
+            }
+
+            input[type="range"]::-moz-range-thumb {
+                height: 20px;
+                width: 20px;
+                border-radius: 15px;
+                background: var(--thumbColor);
+                cursor: pointer;
+            }
+
+            input[type="range"]::-ms-track {
+                width: 100%;
+                height: 5px;
+                cursor: pointer;
+                animate: 0.2s;
+                background: transparent;
+                border-color: transparent;
+                color: transparent;
+            }
+
+            input[type="range"]::-ms-fill-lower {
+                background: var(--trackColor);
+                border-radius: 2px;
+            }
+
+            input[type="range"]::-ms-fill-upper {
+                background: var(--trackColor);
+                border-radius: 2px;
+            }
+
+            input[type="range"]::-ms-thumb {
+                margin-top: 1px;
+                height: 20px;
+                width: 20px;
+                border-radius: 15px;
+                background: var(--thumbColor);
+                cursor: pointer;
+            }
+
+            input[type="range"]:focus::-ms-fill-lower {
+                background: var(--trackColor);
+            }
+
+            input[type="range"]:focus::-ms-fill-upper {
+                background: var(--trackColor);
+            }
+</style>
+
+<div class="app container pb-5">
+    <h1>Update any of the variables <span>live</span></h1>
+    <form>
+        <div class="controls">
+            <label for="border">Border:</label>
+            <input type="range"
+                   name="border"
+                   min="10"
+                   max="200"
+                   value="10"
+                   data-sizing="px" />
+        </div>
+        <div class="controls">
+            <label for="grayscale">Grayscale:</label>
+            <input type="range"
+                   name="grayscale"
+                   min="1"
+                   max="100"
+                   value="0"
+                   data-sizing="%" />
+        </div>
+        <div class="controls">
+            <label for="saturate">Saturate:</label>
+            <input type="range"
+                   name="saturate"
+                   min="1"
+                   max="100"
+                   value="100"
+                   data-sizing="%" />
+        </div>
+        <div class="controls">
+            <label for="sepia">Sepia:</label>
+            <input type="range"
+                   name="sepia"
+                   min="1"
+                   max="100"
+                   value="0"
+                   data-sizing="%" />
+        </div>
+        <div class="controls">
+            <label for="blur">Blur:</label>
+            <input type="range"
+                   name="blur"
+                   min="0"
+                   max="25"
+                   value="0"
+                   data-sizing="px" />
+        </div>
+        <div class="controls">
+            <label for="color">Color</label>
+            <input type="color" name="color" value="#ffc600" />
+        </div>
+
+        <input type="file" value="Upload" onchange="uploadImage(this)" name="submit" id="image" accept="image/x-png,image/gif,image/jpeg" />
+    </form>
+
+    <img src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3de8a9265d3a8fe2960c812545c78327&auto=format&fit=crop&w=1351&q=80" id="editImage" alt="image to edit" download onclick="download()" />
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/Projects/LiveUpdate.js"></script>
+}

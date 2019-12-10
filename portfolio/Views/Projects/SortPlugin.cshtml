@@ -1,0 +1,91 @@
+﻿<style>
+    .app {
+        margin: 0 auto;
+        font-family: sans-serif;
+        background: url(https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    button {
+        font-size: 20px;
+        width: 100px;
+        padding: 10px;
+        margin: 10px auto;
+        background-color: rgb(56, 151, 32);
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+        button:hover {
+            background-color: rgb(45, 121, 26);
+        }
+
+    .tooltip {
+        font-size: 12px;
+        visibility: hidden;
+        width: 150px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        margin: 0 30px;
+        z-index: 1;
+    }
+
+    button:hover .tooltip {
+        visibility: visible;
+    }
+
+    .bands {
+        list-style: inside square;
+        font-size: 20px;
+        background: white;
+        width: 500px;
+        margin: auto;
+        padding: 0;
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+        .bands li {
+            border-bottom: 1px solid #efefef;
+            padding: 20px;
+        }
+
+            .bands li:last-child {
+                border-bottom: 0;
+            }
+
+    a {
+        color: #ffc600;
+        text-decoration: none;
+    }
+
+    @@media (max-width: 500px) {
+        .bands {
+            width: 200px;
+            font-size: 10px;
+        }
+    }
+</style>
+
+
+
+<div class="app container">
+    <button>
+        Sort
+        <span class="tooltip">Sort by name without connectors</span>
+    </button>
+    <ul class="bands"></ul>
+</div>
+
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/Projects/SortPlugin.js"></script>
+}
