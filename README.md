@@ -1,2 +1,2 @@
-# MVC-Portfolio
-Portfolio made with MVC
+# C# Portfolio
+Portfolio made with ASP.NET
