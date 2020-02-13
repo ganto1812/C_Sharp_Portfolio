@@ -182,7 +182,6 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\adobe-xd.svg" />
-    <Content Include="Images\AP-Spade.png" />
     <Content Include="Images\bootstrap.jpg" />
     <Content Include="Images\clock.jpg" />
     <Content Include="Images\cSharp.png" />
@@ -201,7 +200,7 @@
     <Content Include="Images\javascript.jpg" />
     <Content Include="Images\jquery.png" />
     <Content Include="Images\liveUpdate.jpg" />
-    <Content Include="Images\me.jpg" />
+    <Content Include="Images\me.png" />
     <Content Include="Images\mouseEffect.jpg" />
     <Content Include="Images\name.svg" />
     <Content Include="Images\net.png" />
@@ -275,6 +274,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
